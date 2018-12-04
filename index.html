@@ -1,0 +1,273 @@
+<html>
+<head>  
+        <script src="lib/artyom.window.min.js"></script>
+</head>
+<body>
+       
+    
+    <h2 align="center">Atenas Assistente</h2>
+    <h4 align="center">Estou te escutando</h4>
+    <h6 align="center">Fale: Bom dia Atenas ou boa tarde Atenas ou boa noite Atenas, Fale: Que horas são,  Fale: Que dia é hoje, Fale: Quem te criou?, Fale: Estou triste ou estou bem</h6>
+    <spam id="textout"></spam>
+    <img src="imagens/Atenas4.gif" alt="Atenas" style="width:100%" width="50px" height="418">
+   
+    <h6 align="center">Desenvolvido por Wanderson Joner. JavaScript Code. Atenas Assistente Pessoal 2018</h6>
+    <script>
+        const artyom = new Artyom();
+
+        artyom.initialize({
+
+            lang:'pt-PT',
+            continuous: true,
+            debug: false,
+            listen: true,
+            speed:1 
+        })
+    // Nao vou fazer comentários nas funcoes pois está muito verboso. Simples de entender.
+        const funcSaudacao = {
+        
+        indexes: ["Bom dia Atenas"],
+            action: function(i){
+                if(i==0){
+                artyom.say("Bom dia. Eu sou Atenas sua Assistente Pessoal. Posso abrir o feicebook, ioutube, googou, hora e dia atual, e muito mais. O que desejas? ")
+                }else if(i==1){
+                artyom.say("Erro de bom dia")
+                }
+            }
+        }
+        
+        // funcao para mostrar as horas
+        const funcTime = {
+        
+        indexes: ["Que horas são"],
+            action: function(i){
+                if(i==0){
+                    data = new Date()
+                    horas = data.getHours()
+                    minutos = data.getMinutes()
+                    artyom.say("São "+horas+" e "+minutos+"minutos")
+
+                }else if(i==1){
+                    artyom.say("Erro de horario")
+                }
+            }
+        }
+
+        // funcao para mostrar o dia do mês
+        const funcQdia = {
+        
+        indexes: ["Que dia é hoje"],
+            action: function(i){
+                if(i==0){
+                    data = new Date()
+                    dia = data.getDay()
+                    mes = data.getMonth()
+                    artyom.say("Hoje é "+dia+"do mes"+mes)
+
+                }else if(i==1){
+                    artyom.say("Erro de funcQdia")
+                }
+            }
+        }
+
+
+        const funcBoaTarde = {
+        
+        indexes: ["Boa tarde atenas"],
+            action: function(i){
+                if(i==0){
+                artyom.say("Boa Tarde em que posso te ajudar?")
+                }else if(i==1){
+                    artyom.say("Erro de boa tarde")
+                }
+            }
+        }
+
+        const funcBoaNoite = {
+        
+        indexes: ["Boa noite atenas"],
+            action: function(i){
+                if(i==0){
+                artyom.say("Boa Noite. como voce está")
+                }else if(i==1){
+                    artyom.say("Erro de boa noite")
+                }
+            }
+        }
+
+        const funcEstouBem = {
+        
+        indexes: ["Estou bem"],
+            action: function(i){
+                if(i==0){
+                artyom.say("Isso mesmo, você tem que ter otimismo total")
+                }else if(i==1){
+                    artyom.say("Erro de estou bem")
+                }
+            }
+        }
+
+        const funcEstouTriste = {
+        
+        indexes: ["Estou triste"],
+            action: function(i){
+                if(i==0){
+                artyom.say("Levanta tua moral, você tem que acreditar em você. Pense em coisas boas e sorria")
+                }else if(i==1){
+                    artyom.say("Erro de estou triste")
+                }
+            }
+        }
+
+        
+        const funcEsperandoComando = {
+        
+        indexes: ["Atenas"],
+            action: function(i){
+                if(i==0){
+                artyom.say("Sim mestre estou aguardando seus comandos")
+                }else if(i==1){
+                    artyom.say("Erro na funcEsperandoComando")
+                }
+            }
+        }
+
+        const funcFacebook = {
+        
+        indexes: ["Abrir facebook"],
+            action: function(i){
+                if(i==0){
+                    artyom.say("Abrindo facebook")
+                window.open("https://www.facebook.com", "_blank")
+                }else if(i==1){
+                    artyom.say("Deu erro mestre na funcPagina")
+                }
+            }
+        }
+
+        const func2PacGhost = {
+        
+        indexes: ["Abrir Tupac música ghost"],
+            action: function(i){
+                if(i==0){
+                    artyom.say("Abrindo video do too Pec música Gosti")
+                window.open("https://www.youtube.com/watch?v=t0tCAx3JQ-g&start_radio=1&list=RDt0tCAx3JQ-g", "_blank")
+                }else if(i==1){
+                    artyom.say("Deu erro mestre na func2PacGhost")
+                }
+            }
+        }
+
+       const funcGoogle = {
+        
+        indexes: ["Abrir Google"],
+            action: function(i){
+                if(i==0){
+                    artyom.say("Abrindo Google")
+                window.open("https://www.google.com", "_blank")
+                }else if(i==1){
+                    artyom.say("Deu erro mestre na funcGoogle")
+                }
+            }
+        }
+
+        const funcYoutube = {
+        
+        indexes: ["Abrir Youtube"],
+            action: function(i){
+                if(i==0){
+                    artyom.say("Abrindo Youtube")
+                window.open("https://www.youtube.com", "_blank")
+                }else if(i==1){
+                    artyom.say("Deu erro mestre na funcYoutube")
+                }
+            }
+        }
+
+       const funcObrigado = {
+        
+        indexes: ["Obrigado"],
+            action: function(i){
+                if(i==0){
+                artyom.say("Ok Mestre, qualquer coisa estou aqui. Liga nós muleque doido")
+                }else if(i==1){
+                    artyom.say("Erro na funcfuncObrigado")
+                }
+            }
+        }
+
+        const funcQuemDev = {
+        
+        indexes: ["Quem te criou"],
+            action: function(i){
+                if(i==0){
+                artyom.say("Fui desenvolvida por Wanderson Joner. Desenvolvedor Fullstack Master Jaavaascript")
+                }else if(i==1){
+                    artyom.say("Erro na funcQuemDev")
+                }
+            }
+        }
+        
+        const funcAbrirDoc = {
+        
+        indexes: ["Abrir meus documentos"],
+            action: function(i){
+                if(i==0){
+                    artyom.say("Abrindo a pasta meus documentos")
+                    window.open("C:\Users\User\Documents") // abrir no Windows
+                //  window.open("ip do documents") Abrir no Mac OS x      
+                
+                
+                }else if(i==1){
+                    artyom.say("Deu erro mestre na funcAbrirDoc")
+                }
+            }
+        }
+
+        // o RecognizedTextOutput trasnforma a fala em texto
+        artyom.redirectRecognizedTextOutput(function(text, EhFinal){
+            const spam = document.getElementById("textout")
+            if (EhFinal){
+                spam.innerHTML = text
+            }else{
+                spam.innerHTML = spam.innerHTML+'.'
+            }
+        })
+
+        const funcQualNome = {
+        
+        indexes: ["Qual é seu nome"],
+            action: function(i){
+                if(i==0){
+                artyom.say("Eu sou Atenas assistente pessoal")
+                }else if(i==1){
+                    artyom.say("Erro na funcQualNome")
+                }
+            }
+        }
+
+
+        // chamando as funcoes    
+        artyom.addCommands(funcSaudacao)
+        artyom.addCommands(funcTime)
+        artyom.addCommands(funcQdia)
+        artyom.addCommands(funcBoaTarde)
+        artyom.addCommands(funcBoaNoite)
+        artyom.addCommands(funcFacebook)
+        artyom.addCommands(funcGoogle)
+        artyom.addCommands(funcYoutube)
+        artyom.addCommands(funcEsperandoComando)
+        artyom.addCommands(funcObrigado)
+        artyom.addCommands(funcQuemDev)
+        artyom.addCommands(funcAbrirDoc)
+        artyom.addCommands(funcQualNome)
+        artyom.addCommands(funcEstouBem)
+        artyom.addCommands(funcEstouTriste)
+        artyom.addCommands(func2PacGhost)
+          
+    </script>
+   
+   
+</body>
+
+</html>
