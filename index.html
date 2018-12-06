@@ -53,16 +53,15 @@
             }
         }
 
-        // funcao para mostrar o dia do mês
+        // funcao para mostrar o dia, mês e ano
         const funcQdia = {
         
         indexes: ["Que dia é hoje"],
             action: function(i){
                 if(i==0){
                     data = new Date()
-                    dia = data.getDay()
-                    mes = data.getMonth()
-                    artyom.say("Hoje é "+dia+"do mes"+mes)
+                    ano = data.toLocaleDateString()
+                    artyom.say("hoje é"+ano)
 
                 }else if(i==1){
                     artyom.say("Erro de funcQdia")
@@ -246,6 +245,17 @@
             }
         }
 
+        const funcAteAmnha = {
+        
+        indexes: ["Boa noite até amanhã"],
+            action: function(i){
+                if(i==0){
+                artyom.say("Boa noite. Descance e tenha um bom sono")
+                }else if(i==1){
+                    artyom.say("Erro na funcAteAmnha")
+                }
+            }
+        }        
 
         // chamando as funcoes    
         artyom.addCommands(funcSaudacao)
@@ -264,7 +274,10 @@
         artyom.addCommands(funcEstouBem)
         artyom.addCommands(funcEstouTriste)
         artyom.addCommands(func2PacGhost)
+        artyom.addCommands(funcAteAmnha)
           
+        
+
     </script>
    
    
